@@ -1,5 +1,7 @@
 {
   "name": "pdf",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
