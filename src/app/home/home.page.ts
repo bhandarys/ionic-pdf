@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { File } from '@ionic-native/file/ngx';
-
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,6 +14,7 @@ export class HomePage {
                 private transfer: FileTransfer
               , private fileOpener: FileOpener
               , private file: File
+              , private document: DocumentViewer
   ) {}
 
   download() {
@@ -22,7 +23,11 @@ export class HomePage {
     const fileTransfer: FileTransferObject = this.transfer.create();
     const file = (new Date()).getTime();
     fileTransfer.download(url, `${externalApplicationStorageDirectory}${file}`).then((entry) => {
-      this.fileOpener.open(entry.toURL(), 'application/pdf').then(() => alert(`File - ${file}`));
+      // this.fileOpener.open(entry.toURL(), 'application/pdf').then(() => alert(`File - ${file}`));
+      const options: DocumentViewerOptions = {
+        title: 'My PDF'
+      };
+      this.document.viewDocument(entry.toURL(), 'application/pdf', options);
     }).catch((e) => {
       alert(e.exception);
     });

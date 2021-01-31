@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "^0.1000.0",
     "@angular/common": "~10.0.0",
     "@angular/core": "~10.0.0",
     "@angular/forms": "~10.0.0",
@@ -20,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/document-viewer": "^5.28.0",
     "@ionic-native/file": "^5.28.0",
     "@ionic-native/file-opener": "^5.31.1",
     "@ionic-native/file-transfer": "^5.31.1",
@@ -35,7 +37,6 @@
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1000.0",
     "@angular/cli": "~10.0.5",
     "@angular/compiler": "~10.0.0",
     "@angular/compiler-cli": "~10.0.0",
